@@ -7,7 +7,6 @@ Gem::Specification.new do |s|
   s.name = 'ruby_scep'
   s.version = RubyScep::Version::STRING
   s.platform = Gem::Platform::RUBY
-  s.required_ruby_version = '>= 2.3.0'
   s.authors = ['Christophe Valentin']
   s.description = <<-EOF
    Ruby implementation of SCEP
