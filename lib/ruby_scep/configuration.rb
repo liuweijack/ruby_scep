@@ -3,14 +3,14 @@ module RubyScep
   class Configuration
     attr_accessor :ca_cert_path, :ca_key_path,
                   :ca, :ca_key,
-                  :certificates_store
+                  :certificates_store,:ca_key_password
 
     def ca
       @ca ||= OpenSSL::X509::Certificate.new(File.read(@ca_cert_path))
     end
 
     def ca_key
-      @ca_key ||= OpenSSL::PKey::RSA.new(File.read(@ca_key_path))
+      @ca_key ||= OpenSSL::PKey::RSA.new(File.read(@ca_key_path),@ca_key_password)
     end
 
     def certificates_store
